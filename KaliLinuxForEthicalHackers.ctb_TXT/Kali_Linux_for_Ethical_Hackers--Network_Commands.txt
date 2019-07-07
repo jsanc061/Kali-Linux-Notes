@@ -1,0 +1,22 @@
+NETWORK COMMANDS
+
+ifconfig -  (shows connected interfaces and IPs addressed to them)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+iwconfig - (shows wireless interfaces information, if connected)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+arp -a   -  (shows IP address the interface talks to & the MAC address associated with it)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+netstat -ano   -   (shows the active connections running on the machine)
+
+*** Useful to see if your machine is talking to another machine/service on a specific port number ***
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+route   -    (shows routing table / shows where traffic is exiting)
+

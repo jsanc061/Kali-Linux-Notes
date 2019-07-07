@@ -1,0 +1,43 @@
+USERS & PRIVELEGES COMMANDS
+
+Command: ls -la
+
+Output: d rwx r-x  r-x 14 root root 4096 May 11 17:41 
+               | 1 |  2  | 3 |
+               
+1) Permissions for Owner of the file
+2) Permissions for Group Members that own a copy of the file
+3) Permissions for all other users
+
+d = directory
+r = read
+w = write
+x = execute
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+chmod (change mode/permission)
+
+chmod +rwx or chmod 777 (gives full permissions to read/write/execute for the user)
+chmod +rw
+chmod +x ...
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+adduser (creates a new user in the group)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+cat /etc/passwd (shows all the users in the group)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+cat/etc/shadow -  (shows all the user's hashed passwords)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+su user  -  (switches to different user account)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+

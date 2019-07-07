@@ -1,0 +1,11 @@
+BASIC COMMANDS
+ls -la = show all files + all hidden files
+
+locate file or locate filetype = finds and lists all files with similar names and/or file types
+
+updatedb = updates the database
+
+passwd = updates the user's password to a new password
+
+man = instructions for any command you are trying to use
+

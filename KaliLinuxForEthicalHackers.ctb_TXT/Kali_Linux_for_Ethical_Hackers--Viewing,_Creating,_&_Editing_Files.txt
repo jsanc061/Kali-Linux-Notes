@@ -1,0 +1,29 @@
+VIEWING, CREATING, & EDITING FILES
+
+echo “hi” > hey.txt     - (Writes a string “hi” to a .txt file named “hey”)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+cat hey.txt                  - (Prints out what is stored in the file)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+echo “bye” >> hey.txt - (Appends a string to the file)
+
+*** Append is useful for creating lists: ***
+
+     Ex:
+        - IP addresses you might be collecting
+        - A series of commands you want to execute all at once  
+        
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Different text editors within the terminal 
+
+nano 
+gedit
+vi
+vim
+
+
+

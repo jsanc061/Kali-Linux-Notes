@@ -1,0 +1,114 @@
+SCRIPTING WITH BASH
+
+ping 192.168.1.90 -c 1 > ip.txt    -  (sends 1 packet to the IP address and stores the output into “ip.txt”)
+
+Now we want to narrow down the output of this file to extract the IP address by using,
+
+cat ip.txt | grep “64 bytes”
+
+Output:
+    64 bytes from 192.168.1.90: icmp_seq=1 ttl=128 time=2.21 ms
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+grep - narrows down results and displays only lines containing search term or file type
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+We can narrow down further by using,
+
+cat ip.txt | grep “64 bytes” | cut -d “ ” -f 4
+
+cut - 
+
+    -d (delimiter) : what you want to remove, in this case, “ ", or space is our delimiter
+    
+    -f (field) : which field position you want to return, in this case, we want field 4 where the IP address is
+
+Output: 
+    192.168.1.90:
+    
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Now we want to remove the colon at the end of the IP address by using,
+
+cat ip.txt | grep “64 bytes” | cut -d “ ” -f 4 | tr -d “:”
+
+tr - (translate)
+    -d(delimeter) : what you want to remove, in this case, “:”
+    
+Output:
+    192.168.1.90
+    
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Now, we can automate obtaining IP addresses by writing this into a script by typing,
+
+gedit ipsweep.sh
+
+Afterwards type the following:
+
+#!/bin/bash
+if [ "$1" == "" ]
+then
+echo "Must enter IP address"
+echo "Syntax: ./ipsweep.sh 10.0.2"
+
+else
+for ip in $(seq 1 254);
+do
+ping -c 1 $1.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" &
+done
+fi
+
+Save and close the file.
+
+-c 1  - (Used to send just one packet per address)
+$1   - (Used to obtain user input)
+$ip  - (Variable used to hold ip addresses) 
+&     - (Used to enable threading on the process)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+We have to then give our file the correct permissions to execute by using,
+
+chmod +x ipsweep.sh
+
+Now we can execute our script by typing,
+
+./ipsweep.sh IP_ADDR
+    
+    Ex: ./ipsweep.sh 192.168.1
+         ./ipsweep.sh 10.0.2
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+We can output this to a file by using,
+
+./ipsweep.sh 10.0.2 > iplist.txt
+
+and then view our results by typing,
+
+cat iplist.txt
+
+Output: 
+    10.0.2.2
+    10.0.2.4
+    10.0.2.3
+    10.0.2.15
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Now that we have IP addresses in a list, we can use them to perform penetration tests like nmap
+
+To do this, we can type in the console:
+
+for ip in $(cat iplist.txt); do nmap -sS -p 80 -T4 $ip; done    (end with semi-colon to run one at a time = single threaded)
+
+or 
+
+for ip in $(cat iplist.txt); do nmap -sS -p 80 -T4 $ip & done    (end with ampersand to run simultaneously = multithreaded)
+
+
+
+

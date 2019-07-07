@@ -1,0 +1,24 @@
+STARTING & STOPPING SERVICES IN KALI
+
+service apache2 start  - (starts the apache2 service so that you can host a local html webpage)
+
+service apache2 stop   - (stops the apache2 service)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+python -m SimpleHTTPServer 8080  - (starts up a simple HTTP web server running on port 8080)
+
+
+****************** Question ********************
+
+** How to spin up a FTP server using python? **
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+systemctl enable ssh                 - (Persistently enables ssh on your machine when it starts up)
+systemctl enable postgresql      - (Persistently enables postgresql for Metasploit framework)
+ 
+systemctl disable ssh                - (Disables ssh on your machine when it starts up)
+
+
+

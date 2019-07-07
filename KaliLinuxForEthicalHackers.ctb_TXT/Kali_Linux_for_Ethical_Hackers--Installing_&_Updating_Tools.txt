@@ -1,0 +1,10 @@
+INSTALLING & UPDATING TOOLS
+
+apt-get update && apt-get upgrade  - (checks all the sytems packages for updates & updates them; then upgrade the packages to the newest packages)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+apt-get install git   - (installs git into your machine / used for github/gitlab and other git repositories)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
