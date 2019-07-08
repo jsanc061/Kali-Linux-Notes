@@ -1,0 +1,19 @@
+METASPLOIT FRAMEWORK
+Armitage - GUI for Metasploit Framework
+
+**  Metasploit Console  **
+
+First need to start postgresql database to run metasploit on,
+
+In terminal, type to start the database service:
+    service postgresql start
+
+Then to run metasploit type,
+
+    msfconsole
+    
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

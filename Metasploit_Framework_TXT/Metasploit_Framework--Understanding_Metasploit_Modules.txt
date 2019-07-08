@@ -1,0 +1,30 @@
+UNDERSTANDING METASPLOIT MODULES
+
+Modules usually saved in the following directory:
+
+    cd /usr/share/metasploit-framework/modules
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exploits - A module that will take advantage of a system's vulnerability and it will install/plant a payload onto the victim machine
+
+Payloads - Files left onto the victim machine that gives you access or control over the system
+              - Ex: Rootkits / reverse shell
+              
+              - Divided into 3 groups:
+                    1. Singles    -    ( Designed to do one single action )
+                                            Ex: Keylogging
+                    2. Stagers   -    ( Used for creating a communication link between the attacker and the victim machine )
+                                      -     ( Can be used to deliver another payload ) 
+                    3. Stages    -     ( Very large payloads, can give very good control over the target )
+                                            Ex: VNC connections, meterpreter shell, reverse shell
+
+Auxiliary - Unique types of modules that perform scanning, fuzzing, sniffing, etc. to find vulnerabilities about the target
+
+Encoders - Used to re-encode payloads and exploits to get by security systems such as anti-viruses
+
+Nops (No Operation) - Causes the system's CPU to do nothing for 1 clock cycle which can allow you to remotely execute a specific file/code after you've exploited the buffer overflow
+
+Post - Used after the target system has been exploited, allows you to perform further attacks once the system has been owned
+        Ex: Keyloggers, webcam, browser information
+

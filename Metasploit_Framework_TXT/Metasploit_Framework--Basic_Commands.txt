@@ -1,0 +1,32 @@
+BASIC COMMANDS
+
+help - (Gives you access to a menu to explain the commands you can use with the Framework)
+
+search [<options>] [<keywords>] - (Allows you to find a module based on what keyword knowledge you give)
+                                                        Ex: 
+                                                            search type:exploit platform:windows flash
+
+
+use <name | term | index> - (Allows you to load a module (exploit) )
+                                            Ex: 
+                                                use exploit/windows/browser/adobe_flash_avm2
+                                                
+                                                
+show all - (Displays all the information about the module loaded)
+
+show options - (Displays the options we can change about the module, changes depend on the how and method of exploitation)
+                     - (Options include: Number of Retries, Server Host, Server Port, SSL/SSLCert (enable/disable), URI Path)
+              
+set [option] [value] - (Allows you to change a specific option about the module)
+                              - (Options include: Retries, SRVHOST, SRVPORT, SSL, SSLCert, URIPATH)
+
+show payloads - (Displays all of the payloads that you can load, different way of approaching an attack)
+
+show targets - (Displays the exploitable targets)
+
+show info - (Gives you information about the exploit)
+
+back - (Takes you a step back in the msfconsole)
+
+exit - (Terminates the msfconsole framework)
+
